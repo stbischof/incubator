@@ -26,7 +26,7 @@
   <modules>
     <module>command</module>
     <module>terminal</module>
-    <!--    <module>scheduler</module>-->
+    <module>scheduler</module>
   </modules>
 
   <!-- can be removed when parent is deployed ad non snapshot.-->
