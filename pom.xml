@@ -31,6 +31,7 @@
   <url>https://github.com/eclipse-osgi-technology/inucubator</url>
 
   <modules>
+    <module>command</module>
     <module>console</module>
     <module>scheduler</module>
   </modules>
