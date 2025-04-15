@@ -18,7 +18,6 @@ import java.time.temporal.TemporalAdjuster;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 
-import org.eclipse.osgi.technology.incubator.scheduler.api.whiteboard.prototypes.CronExpression;
 import org.osgi.annotation.versioning.ProviderType;
 import org.osgi.util.promise.Promise;
 
@@ -99,10 +98,10 @@ public interface Scheduler extends Executor {
 
     /**
      * Schedule a runnable to be executed for the give cron expression (See
-     * {@link CronExpression#expression()}). Every time when the cronExpression
-     * matches the current time, the runnable will be run. The method returns a
-     * closeable that can be used to stop scheduling. This variation does not take
-     * an environment object.
+     * CronExpression#expression() ). Every time when the cronExpression matches the
+     * current time, the runnable will be run. The method returns a closeable that
+     * can be used to stop scheduling. This variation does not take an environment
+     * object.
      *
      * @param r              The Runnable to run
      * @param name           The name
@@ -124,7 +123,7 @@ public interface Scheduler extends Executor {
      * </pre>
      *
      * @param cronExpression a Cron expression as specified in
-     *                       {@link CronExpression#expression()}
+     *                       CronExpression#expression()
      * @return a Temporal Adjuster based on a cron expression
      */
     TemporalAdjuster getCronAdjuster(String cronExpression);

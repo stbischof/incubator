@@ -20,9 +20,13 @@
     <artifactId>reactor</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
+  <groupId>org.eclipse.osgi-technology.incubator.console</groupId>
 
-  <artifactId>terminal</artifactId>
+  <artifactId>console</artifactId>
   <packaging>pom</packaging>
 
-
+  <modules>
+    <module>plain</module>
+  </modules>
+  
 </project>
