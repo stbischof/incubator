@@ -1,0 +1,4 @@
+Import-Package: \
+  org.osgi.service.http.runtime;'resolution:'=optional,\
+  org.osgi.service.http.runtime.dto;'resolution:'=optional,\
+  *
