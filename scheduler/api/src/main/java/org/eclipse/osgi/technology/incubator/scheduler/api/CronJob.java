@@ -52,18 +52,18 @@ package org.eclipse.osgi.technology.incubator.scheduler.api;
  * Year	        No	       1970–2099	       * / , -
  * </pre>
  *
- * <h3>Asterisk ( * )</h3>
+ * Asterisk ( * )
  * <p>
  * The asterisk indicates that the cron expression matches for all values of the
  * field. E.g., using an asterisk in the 4th field (month) indicates every
  * month.
- * <h3>Slash ( / )</h3>
+ * Slash ( / )
  * <p>
  * Slashes describe increments of ranges. For example 3-59/15 in the 1st field
  * (minutes) indicate the third minute of the hour and every 15 minutes
  * thereafter. The form "*\/..." is equivalent to the form "first-last/...",
  * that is, an increment over the largest possible range of the field.
- * <h3>Comma ( , )</h3>
+ * Comma ( , )
  * <p>
  * Commas are used to separate items of a list. For example, using "MON,WED,FRI"
  * in the 5th field (day of week) means Mondays, Wednesdays and Fridays. Hyphen
@@ -82,9 +82,9 @@ package org.eclipse.osgi.technology.incubator.scheduler.api;
  * &#64;reboot	Run at startup	@reboot (at service registration time)
  * </pre>
  * <p>
- * Please not that for the constants we follow the Java 8 Date & Time constants.
- * Major difference is the day number. In Quartz this is 0-6 for SAT-SUN while
- * here it is 1-7 for MON-SUN.
+ * Please not that for the constants we follow the Java 8 Date and Time
+ * constants. Major difference is the day number. In Quartz this is 0-6 for
+ * SAT-SUN while here it is 1-7 for MON-SUN.
  *
  */
 public interface CronJob {

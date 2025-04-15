@@ -31,7 +31,7 @@ public @interface CronExpression {
 
     /**
      * The 'cronjob.cron' service property as defines in
-     * {@link Constants#SERVICE_PROPERTY_CRONJOB_CRON}
+     * Constants#SERVICE_PROPERTY_CRONJOB_CRON
      * 
      * @return
      */
@@ -40,7 +40,7 @@ public @interface CronExpression {
 
     /**
      * The 'cronjob.name' service property as defines in
-     * {@link Constants#SERVIC_PROPERTY_CRON_NAME()()}
+     * Constants#SERVIC_PROPERTY_CRON_NAME()
      * 
      * @return
      */

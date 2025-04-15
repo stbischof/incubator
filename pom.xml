@@ -15,6 +15,13 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+
+  <parent>
+    <groupId>org.eclipse.osgi-technology</groupId>
+    <artifactId>org.eclipse.osgi-technology.pom.parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
   <groupId>org.eclipse.osgi-technology.incubator</groupId>
   <artifactId>reactor</artifactId>
   <version>0.0.1-SNAPSHOT</version>
@@ -24,8 +31,7 @@
   <url>https://github.com/eclipse-osgi-technology/inucubator</url>
 
   <modules>
-    <module>command</module>
-    <module>terminal</module>
+    <module>console</module>
     <module>scheduler</module>
   </modules>
 
@@ -56,16 +62,6 @@
   </repositories>
 
   <developers>
-    <developer>
-      <id>ideas-into-software</id>
-      <name>Michael H. Siemaszko</name>
-      <email>mhs@into.software</email>
-    </developer>
-    <developer>
-      <id>timothyjward</id>
-      <name>Tim Ward</name>
-      <email>timothyjward@apache.org</email>
-    </developer>
     <developer>
       <id>StefanBischof</id>
       <name>Stefan Bischof</name>
@@ -321,4 +317,68 @@
     </dependency>
   </dependencies>
 
+  <build>
+
+    <plugins>
+
+      <plugin>
+        <groupId>biz.aQute.bnd</groupId>
+        <artifactId>bnd-resolver-maven-plugin</artifactId>
+        <executions>
+          <!-- Integration Test Configuration -->
+          <execution>
+            <id>resolve-test</id>
+            <phase>pre-integration-test</phase>
+            <goals>
+              <goal>resolve</goal>
+            </goals>
+            <configuration>
+              <bndruns>
+                <include>*.bndrun</include>
+              </bndruns>
+              <bundles>
+                <bundle>
+                  ${project.build.directory}/${project.build.finalName}-tests.jar</bundle>
+              </bundles>
+              <failOnChanges>false</failOnChanges>
+              <includeDependencyManagement>true</includeDependencyManagement>
+              <reportOptional>false</reportOptional>
+              <scopes>
+                <scope>compile</scope>
+                <scope>runtime</scope>
+                <scope>test</scope>
+              </scopes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>biz.aQute.bnd</groupId>
+        <artifactId>bnd-testing-maven-plugin</artifactId>
+        <executions>
+          <!-- OSGi integration tests execution -->
+          <execution>
+            <id>testing</id>
+            <goals>
+              <goal>testing</goal>
+            </goals>
+            <configuration>
+              <bndruns>
+                <include>test.bndrun</include>
+              </bndruns>
+              <failOnChanges>false</failOnChanges>
+              <includeDependencyManagement>true</includeDependencyManagement>
+              <resolve>false</resolve>
+              <scopes>
+                <scope>compile</scope>
+                <scope>runtime</scope>
+                <scope>test</scope>
+              </scopes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+
+  </build>
 </project>
